@@ -1,28 +1,1184 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prueba GitHub Pages</title>
+    <meta name="description" content="Professional developer portfolio with projects and updates">
+    <title>JammerDEV | Portfolio</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+                                                              /* ⠀    ⣀⣀⣀⠤⠤⠒⠒⠒⠒⠲⠦⣀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀
+                                                            ⠀⠀⠀⢀⡠⠐⠊⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⢦⡀⠀⠀⠀⠀
+                                                            ⠀⢀⡶⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢳⠀⠀
+                                                            ⠀⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⡄
+                                                            ⢸⠁⡤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻
+                                                            ⡏⢠⠁⠱⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸
+                                                            ⡇⡞⠀⠀⢣⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠠⠤⢀⠀⠀⠀⠀⠀⢀⡠⠀⠘⢆⢻
+                                                            ⡗⡇⠀⠀⠈⢆⠀⠀⠀⠀⠀⠀⢀⣀⡠⠖⠒⠒⠢⣄⠁⠀⢀⢀⣠⠞⠉⠑⠢⣜⠀
+                                                            ⢠⠃⠀⠀⠀⠈⣆⠀⠀⠀⠀⢠⣿⡏⠀⠀⠀⢀⣀⠈⠆⠐⠁⠈⡏⠀⠀⢀⣤⡜⡆
+                                                            ⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠒⣿⣿⡆⠀⠀⠀⣛⣿⡇⣤⠀⠀⠀⠑⡀⠀⠘⣘⣃⠃   What are you looking here, mate?                                                           
+                                                            ⠀⢇⠀⠀⡀⠀⠀⠀⠀⠀⠀⠸⣇⠙⢦⣀⠀⠈⣉⡴⠃⠀⢀⡴⡆⠳⡤⠤⠆⡇⠀
+                                                            ⠀⠈⣏⠈⠉⢦⡀⠀⠀⠀⠀⠀⠙⠒⠈⠉⠛⡛⣫⠆⠀⢠⣾⣷⣷⠀⠀⠢⢠⠇⠀
+                                                            ⠀⠀⠘⣧⣄⠀⣩⠢⣄⠀⠀⠀⠠⠤⠴⠚⠉⠺⠃⠀⢀⡟⣿⠙⢿⢀⣄⣤⡞⠀⠀
+                                                            ⠀⠀⠀⠀⠙⢳⣬⠀⢼⣷⡀⢄⣤⣤⣴⣦⠴⠁⠀⠐⡜⣆⠸⣆⣘⢸⡇⠀⠀⠀⠀
+                                                            ⠀⠀⠀⠀⠀⠈⠟⠀⠀⠙⣯⠉⠉⢒⣯⣿⠀⠀⠀⠀⠀⠈⠉⠙⠛⠈⡇⠀⠀⠀⠀
+                                                            ⠀⠀⠀⠀⠀⠀⢸⡀⢀⣀⣈⣇⣴⣿⢏⣼⣦⡈⠑⠲⠤⣤⣀⣀⡠⠺⠇⠀⠀⠀⠀
+                                                            ⠀⠀⠀⠀⠀⠀⠀⢧⠀⠀⠉⠉⢻⣵⣿⣿⣿⣿⢷⢠⣤⣀⣈⣀⠈⠜⠀⠀⠀⠀⠀
+                                                            ⠀⠀⠀⠀⠀⠀⠀⠘⢣⡀⢀⡀⠀⠙⢿⣿⣿⢏⠎⣼⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                                                            ⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⣆⠙⠢⣕⣤⠙⠓⢋⡜⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                                                            ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠑⠶⢦⠭⣽⡶⠋ 
+                                               8)8)8)    
+                                                 MM  ,6"Yb.  `7MMpMMMb.pMMMb.  `7MMpMMMb.pMMMb.  .gP"Ya  `7Mb,oor
+                                                 MM      MM    MM    MM    MM    MM    MM    MM ,M'   Yb  MM' "'     
+                                                 MM  ,pm9MM    MM    MM    MM    MM    MM    MM 8M""""""  MM     
+                                            (O)  MM 8M   MM    MM    MM    MM    MM    MM    MM YM.    ,  MM     
+                                             Ymmm9  `Moo9^Yo..JMML  JMML  JMML..JMML  JMML  JMML.`Mbmmd'.JMML.   */ 
+
+                                                             /* https://github.com/JammerDEV-Es */
+                                             
+                                                                                                                                                            
+                                                                                                                                                            
+                                                                                                                                                            
+                                                                                                                                                            
+                                                                                                                                                            
+              
+        :root {
+            --primary: #060404;                                                                                                                                              
+            --secondary: #252526;
+            --tertiary: #2d2d30;
+            --accent: #b46114;
+            --accent-light: #b97c20;
+            --text-light: #e1e4e8;
+            --text-muted: #858585;
+            --border: #3e3e42;
+            --success: #8d5c18;
+            --warning: #b5790b;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            background: #111;
-            color: #00ff99;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
+            background: linear-gradient(180deg, #1e1e1e 0%, #2d2d30 50%, #000000 100%);
+            color: var(--text-light);
+            line-height: 1.6;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(ellipse 800px 800px at 20% 50%, rgba(124, 179, 66, 0.05) 0%, transparent 50%),
+                radial-gradient(ellipse 800px 800px at 80% 80%, rgba(124, 179, 66, 0.03) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Navegación */
+        nav {
+            background: rgba(30, 30, 30, 0.98);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        nav .logo:hover {
+            color: var(--accent-light);
+            transform: scale(1.1);
+        }
+
+        nav .logo:active {
+            transform: scale(0.95);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: var(--accent-light);
+        }
+
+        nav a {
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 6rem 2rem;
             text-align: center;
-            padding-top: 80px;
+            animation: fadeIn 0.8s ease-in;
         }
-        h1 {
-            font-size: 3rem;
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--accent-light), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
         }
-        p {
-            margin-top: 20px;
-            font-size: 1.2rem;
+
+        .hero .subtitle {
+            font-size: 1.3rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.8rem 2rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            cursor: pointer;
+            font-size: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn:active::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: #1e1e1e;
+            font-weight: 700;
+            z-index: 1;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-light);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(156, 204, 101, 0.3);
+        }
+
+        .btn-primary::after {
+            background: rgba(30, 30, 30, 0.2);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--accent);
+            border-color: var(--accent);
+            font-weight: 600;
+            z-index: 1;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(206, 112, 18, 0.1);
+            border-color: var(--accent-light);
+            color: var(--accent-light);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary::after {
+            background: rgba(93, 162, 14, 0.2);
+        }
+
+        /* Secciones */
+        section {
+            padding: 4rem 2rem;
+            border-top: 1px solid var(--border);
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--accent-light);
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent), transparent);
+        }
+
+        /* Grid Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .project-card {
+            background: rgba(45, 45, 48, 0.7);
+            border: 1px solid var(--border);
+            border-radius: 0.75rem;
+            padding: 2rem;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            backdrop-filter: blur(10px);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(156, 204, 101, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .project-card:hover::before {
+            left: 100%;
+        }
+
+        .project-card:hover {
+            background: rgba(45, 45, 48, 0.95);
+            border-color: var(--accent);
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 40px rgba(156, 204, 101, 0.15);
+        }
+
+        .project-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent-light);
+        }
+
+        .project-card .date {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-card p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tag {
+            background: rgba(124, 179, 66, 0.1);
+            color: var(--accent-light);
+            padding: 0.3rem 0.8rem;
+            border-radius: 9999px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(202, 131, 8, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .tag:hover {
+            background: rgba(124, 179, 66, 0.2);
+            border-color: var(--accent-light);
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-links a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .project-links a:hover {
+            color: var(--accent-light);
+        }
+
+        .project-links a::after {
+            content: '';
+            display: inline-block;
+            margin-left: 0.5rem;
+            width: 0;
+            height: 2px;
+            background: var(--accent-light);
+            transition: width 0.3s ease;
+            vertical-align: middle;
+        }
+
+        .project-links a:hover::after {
+            width: 10px;
+        }
+
+        /* Blog Section - Crack Me */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .blog-post {
+            background: rgba(45, 45, 48, 0.7);
+            border: 1px solid var(--border);
+            border-radius: 0.75rem;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            display: flex;
+            flex-direction: column;
+            backdrop-filter: blur(10px);
+            cursor: pointer;
+            position: relative;
+            transform-origin: center;
+        }
+
+        .blog-post::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(156, 204, 101, 0.1), transparent);
+            transition: left 0.6s ease;
+            pointer-events: none;
+        }
+
+        .blog-post:hover::before {
+            left: 100%;
+        }
+
+        .blog-post:hover {
+            background: rgba(45, 45, 48, 0.95);
+            border-color: var(--accent);
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 40px rgba(156, 204, 101, 0.15);
+        }
+
+        .blog-header {
+            padding: 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .blog-status {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 9999px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .status-new {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--success);
+        }
+
+        .status-update {
+            background: rgba(245, 158, 11, 0.1);
+            color: var(--warning);
+        }
+
+        .blog-title {
+            font-size: 1.3rem;
+            margin: 0.5rem 0;
+            color: var(--accent-light);
+        }
+
+        .blog-meta {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+        }
+
+        .blog-content {
+            padding: 2rem;
+            flex: 1;
+        }
+
+        .blog-description {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .blog-footer {
+            padding: 1.5rem 2rem;
+            border-top: 1px solid var(--border);
+            display: flex;
+            gap: 1rem;
+        }
+
+        .blog-footer a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .blog-footer a:hover {
+            color: var(--accent-light);
+        }
+
+        /* Stats */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(45, 45, 48, 0.7);
+            border: 1px solid var(--border);
+            border-radius: 0.75rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(156, 204, 101, 0.1), transparent);
+            transition: left 0.6s ease;
+            pointer-events: none;
+        }
+
+        .stat-card:hover {
+            background: rgba(45, 45, 48, 0.95);
+            border-color: var(--accent);
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 40px rgba(156, 204, 101, 0.15);
+        }
+
+        .stat-card:hover::after {
+            left: 100%;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--accent-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(30, 30, 30, 0.98);
+            border-top: 1px solid var(--border);
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-top: 3rem;
+            box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.4);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--accent);
+        }
+
+        .footer-text {
+            color: var(--text-muted);
+        }
+
+        /* Animaciones */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInFromBottom {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes modalShow {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes backdropShow {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            animation: backdropShow 0.3s ease-out;
+            overflow-y: auto;
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: var(--tertiary);
+            border: 1px solid var(--border);
+            border-radius: 0.75rem;
+            max-width: 800px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            animation: modalShow 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+        }
+
+        .modal-header {
+            padding: 2rem;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            background: var(--tertiary);
+        }
+
+        .modal-title {
+            font-size: 1.8rem;
+            color: var(--accent-light);
+            margin: 0;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            padding: 0;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-close:hover {
+            color: var(--accent);
+        }
+
+        .modal-body {
+            padding: 2rem;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        .modal-body h3 {
+            color: var(--accent-light);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .modal-body p {
+            margin-bottom: 1rem;
+            color: var(--text-muted);
+        }
+
+        .modal-body code {
+            background: rgba(186, 104, 17, 0.1);
+            padding: 0.2rem 0.5rem;
+            border-radius: 0.25rem;
+            color: var(--accent);
+            font-family: 'Courier New', monospace;
+        }
+
+        .modal-body ul, .modal-body ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .modal-body li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Scroll personalizado para modal */
+        .modal-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .modal-content::-webkit-scrollbar-track {
+            background: var(--tertiary);
+        }
+
+        .modal-content::-webkit-scrollbar-thumb {
+            background: var(--accent);
+            border-radius: 4px;
+        }
+
+        .modal-content::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-light);
+        }
+
+        /* Profile menu (hover) */
+        .logo-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+
+        .profile-menu {
+            position: absolute;
+            top: calc(100% + 2px);
+            left: 0;
+            min-width: 220px;
+            background: var(--tertiary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 0.6rem;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+            opacity: 0;
+            transform: translateY(-6px);
+            pointer-events: none;
+            transition: opacity 180ms ease, transform 180ms ease;
+            transition-delay: 120ms; /* small delay before hiding */
+            z-index: 1200;
+        }
+
+        /* show immediately when hovering logo or the menu itself */
+        .logo-wrapper:hover .profile-menu,
+        .logo-wrapper:focus-within .profile-menu,
+        .profile-menu:hover {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+            transition-delay: 0s;
+        }
+
+        .profile-menu .pm-row {
+            display: flex;
+            gap: 0.6rem;
+            align-items: center;
+            padding: 0.45rem 0.4rem;
+        }
+
+        .pm-avatar {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            border: 1px solid rgba(255,255,255,0.04);
+            display: block;
+            flex-shrink: 0;
+            object-fit: cover;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+        }
+
+        .pm-name {
+            font-weight: 700;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .pm-sub {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+        }
+
+        .pm-actions {
+            display: flex;
+            gap: 0.4rem;
+            padding-top: 0.4rem;
+            justify-content: flex-end;
+        }
+
+        .pm-btn {
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--text-light);
+            padding: 0.4rem 0.6rem;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.18s ease;
+            font-size: 0.9rem;
+        }
+
+        .pm-btn.primary {
+            background: var(--accent);
+            color: #111;
+            border-color: transparent;
+        }
+
+        .pm-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1rem;
+            }
+
+            section h2 {
+                font-size: 1.8rem;
+            }
+
+            .projects-grid,
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .modal-content {
+                width: 95%;
+                max-height: 90vh;
+            }
+
+            .modal-body {
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav .container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .hero {
+                padding: 3rem 1rem;
+            }
+
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .modal-header {
+                padding: 1.5rem;
+            }
+
+            .modal-title {
+                font-size: 1.4rem;
+            }
+
+            .modal-body {
+                padding: 1rem;
+            }
+
+            .profile-menu {
+                min-width: 180px;
+                padding: 0.6rem;
+            }
+
+            .pm-avatar {
+                width: 60px;
+                height: 60px;
+                font-size: 1.6rem;
+            }
+
+            .pm-name {
+                font-size: 1.05rem;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>¡Funciona! 🎉</h1>
-    <p>Esta es una página de prueba publicada con GitHub Pages.</p>
-</body>
-</html>
+    <!-- Navegación -->
+    <nav>
+        <div class="container">
+            <div class="logo-wrapper">
+                <a href="https://github.com/JammerDEV-Es" class="logo" id="logoBtn" target="_blank" rel="noopener">JammerDev</a>
+                <div class="profile-menu" role="menu" aria-hidden="true">
+                    <div class="pm-row">
+                        <img class="pm-avatar" src="https://avatars.githubusercontent.com/u/208219698?v=4" alt="JammerDev avatar">
+                        <div>
+                            <div class="pm-name">JammerDEV-Es</div>
+                            <div class="pm-sub">Hello, i'm JammerDev. I'm learning pentesting, reverse engineering and code.</div>
+                            <div class="pm-sub" style="margin-top:6px; font-size:0.78rem; color:var(--text-muted);">Bergen, Norway</div>
+                        </div>
+                    </div>
+                    <div style="border-top:1px solid var(--border); margin-top:6px; padding-top:6px;">
+                        <div style="font-size:0.82rem; color:var(--text-muted); margin-bottom:6px;">Repos populares</div>
+                        <div style="display:flex; flex-direction:column; gap:6px;">
+                            <a href="https://github.com/JammerDEV-Es/Default-bashrc-for-Linux" class="pm-btn" style="text-align:left; padding:0.35rem 0.5rem;">Default-bashrc-for-Linux</a>
+                            <a href="https://github.com/JammerDEV-Es/TryHackMe" class="pm-btn" style="text-align:left; padding:0.35rem 0.5rem;">TryHackMe (notes)</a>
+                            <a href="https://github.com/JammerDEV-Es/page" class="pm-btn" style="text-align:left; padding:0.35rem 0.5rem;">page</a>
+                        </div>
+                        <div class="pm-actions" style="margin-top:8px;">
+                            <a class="pm-btn" href="mailto:tu@email.com">Contact</a>
+                            <a class="pm-btn primary" href="https://github.com/JammerDEV-Es" target="_blank" rel="noopener">View profile</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <ul>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#blog">Crack Me</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+   
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Hello mate, this is my blog</h1>
+            <p class="subtitle">This will be my blog page, where I'll post the things I'm doing to keep a record of my process. I'll be adding things to the page regularly.</p>
+            <div class="cta-buttons">
+                <a href="#projects" class="btn btn-primary">View Projects</a>
+                <a href="#blog" class="btn btn-secondary">Read Updates</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Estadísticas -->
+    <section>
+        <div class="container">
+            <div class="stats">
+                <div class="stat-card">
+                    <div class="stat-number">4</div>
+                    <div class="stat-label">Public Repositories</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Popular Repos</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">Learning</div>
+                    <div class="stat-label">Code · Pentesting · RE</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">Bergen</div>
+                    <div class="stat-label">Location</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Profile Section Below Stats -->
+    <section style="padding: 2rem 0;">
+        <div class="container" style="max-width: 100%;">
+            <div style="background: var(--tertiary); border: 1px solid var(--border); border-radius: 12px; padding: 2.5rem; box-shadow: 0 8px 30px rgba(0,0,0,0.3); display: flex; gap: 2.5rem; align-items: center;">
+                <div style="flex-shrink: 0;">
+                    <img class="pm-avatar" src="https://avatars.githubusercontent.com/u/208219698?v=4" alt="JammerDev avatar" style="width: 180px; height: 180px; border-radius: 50%;">
+                </div>
+                <div style="flex: 1; min-width: 0;">
+                    <div class="pm-name" style="margin-bottom: 0.2rem; font-size: 1.6rem;">JammerDEV-Es</div>
+                    <div class="pm-sub" style="margin-bottom: 0.4rem; line-height: 1.3; font-size: 0.95rem;">Hello, i'm JammerDev. I'm learning pentesting, reverse engineering and code.</div>
+                    <div class="pm-sub" style="font-size: 0.8rem; margin-bottom: 1.2rem;">Bergen, Norway </div>
+                </div>
+                <div style="flex: 1.2; border-left: 1px solid var(--border); padding-left: 2rem; min-width: 0;">
+                    <div style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Popular Repositories</div>
+                    <div style="display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1.2rem;">
+                        <a href="https://github.com/JammerDEV-Es/Default-bashrc-for-Linux" class="pm-btn" style="text-align: left; padding: 0.45rem 0.5rem; display: block; font-size: 0.85rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Default-bashrc-for-Linux</a>
+                        <a href="https://github.com/JammerDEV-Es/TryHackMe" class="pm-btn" style="text-align: left; padding: 0.45rem 0.5rem; display: block; font-size: 0.85rem;">TryHackMe (notes)</a>
+                        <a href="https://github.com/JammerDEV-Es/page" class="pm-btn" style="text-align: left; padding: 0.45rem 0.5rem; display: block; font-size: 0.85rem;">page</a>
+                    </div>
+                </div>
+                <div style="flex-shrink: 0; display: flex; gap: 0.5rem; flex-direction: column; justify-content: center;">
+                    <a class="pm-btn" href="mailto:tu@email.com" style="padding: 0.7rem 1.2rem; font-size: 0.9rem;">Contact</a>
+                    <a class="pm-btn primary" href="https://github.com/JammerDEV-Es" target="_blank" rel="noopener" style="padding: 0.7rem 1.2rem; font-size: 0.9rem;">View profile</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proyectos -->
+    <section id="projects">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <!-- Default-bashrc-for-Linux -->
+                <div class="project-card">
+                    <h3>Default-bashrc-for-Linux</h3>
+                    <p class="date">Public</p>
+                    <p>Configurations and instructions to customize the terminal prompt (PS1) and restore defaults. Useful for customizing Linux shells.</p>
+                    <div class="project-tags">
+                        <span class="tag">Bash</span>
+                        <span class="tag">Shell</span>
+                        <span class="tag">Config</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/JammerDEV-Es/Default-bashrc-for-Linux" target="_blank">GitHub</a>
+                    </div>
+                </div>
+
+                <!-- TryHackMe -->
+                <div class="project-card">
+                    <h3>TryHackMe</h3>
+                    <p class="date">Public</p>
+                    <p>Notes, writeups and solutions from TryHackMe exercises. Collection of labs covering various cybersecurity topics.</p>
+                    <div class="project-tags">
+                        <span class="tag">Security</span>
+                        <span class="tag">Writeups</span>
+                        <span class="tag">CTF</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/JammerDEV-Es/TryHackMe" target="_blank">GitHub</a>
+                    </div>
+                </div>
+
+                <!-- page -->
+                <div class="project-card">
+                    <h3>page</h3>
+                    <p class="date">Public</p>
+                    <p>Personal project used as a static site or a portfolio page — simple HTML/CSS site to showcase projects.</p>
+                    <div class="project-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/JammerDEV-Es/page" target="_blank">GitHub</a>
+                    </div>
+                </div>
+
+                <!-- JammerDev-Es repo -->
+                <div class="project-card">
+                    <h3>JammerDev-Es</h3>
+                    <p class="date">Public</p>
+                    <p>Repository that holds profile-related content, README and links to other projects and resources.</p>
+                    <div class="project-tags">
+                        <span class="tag">README</span>
+                        <span class="tag">Docs</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/JammerDEV-Es/JammerDev-Es" target="_blank">GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog - Crack Me -->
+    <section id="blog">
+        <div class="container">
+            <h2>🔓 CrackMe Solve</h2>
+            <div style="text-align: center; padding: 4rem 2rem; min-height: 400px; display: flex; align-items: center; justify-content: center;">
+                <div>
+                    <p style="font-size: 2.5rem; font-weight: 300; color: var(--accent-light); margin-bottom: 1rem;">⏳ Coming Soon</p>
+                    <p style="color: var(--text-muted); font-size: 1.2rem; max-width: 500px;">
+                        Crackmes solutions and writeups are on the way. Stay tuned for detailed walkthroughs and reverse engineering insights.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://github.com/JammerDEV-Es" target="_blank">GitHub</a>
+                <a href="iwilldontshowmyemail@evenifitsnotmyrealone.me">Email</a>
+            </div>
+            <p class="footer-text">© 2025 JammerDev Project blog</p>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll suave
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                if (!this.href.includes('contact')) {
+                    e.preventDefault();
+                }
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animación de entrada
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'slideInFromBottom 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.project-card, .blog-post, .stat-card').forEach(el => {
+            el.style.opacity = '0';
+            observer.observe(el);
+        });
+
+        // Profile menu handled by CSS (hover/focus). Logo and "View profile" open GitHub.
+    
