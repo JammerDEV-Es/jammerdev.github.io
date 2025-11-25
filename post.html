@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Entrada - JammerDev</title>
+  <style>
+    :root{--bg:#1e1e1e;--ter:#2d2d30;--accent:#b46114;--accent-light:#b97c20;--text:#e1e4e8;--muted:#858585}
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--bg),#000);color:var(--text);font-family:Segoe UI,Roboto,Arial,sans-serif}
+    .wrap{max-width:900px;margin:28px auto;padding:20px;background:var(--ter);border-radius:8px;border:1px solid rgba(255,255,255,0.03)}
+    h1{color:var(--accent-light);margin:0 0 8px}
+    .meta{color:var(--muted);margin-bottom:12px}
+    .content{white-space:pre-wrap;line-height:1.6;color:var(--text)}
+    a.btn{display:inline-block;margin-top:12px;padding:8px 12px;background:var(--accent);color:#111;border-radius:6px;text-decoration:none;font-weight:700}
+    img{max-width:100%;border-radius:6px;margin-top:12px;border:1px solid rgba(255,255,255,0.04)}
+  </style>
+</head>
+<body>
+  <div class="wrap" id="root">Cargando...</div>
+
+  <script>
+    function qs(name){ const u=new URLSearchParams(window.location.search); return u.get(name); }
+    function formatDate(d){ const dt=new Date(d); return dt.toLocaleDateString(undefined,{year:'numeric',month:'short',day:'numeric'}); }
+    function escapeHtml(s){ return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;'); }
+
+    (async function(){
+      const id = qs('id');
+      try{
+        const res = await fetch('posts.json');
+        const posts = await res.json();
+        const post = posts.find(p=>p.id === id);
+        const root = document.getElementById('root');
+        if(!post){ root.innerHTML = '<div style="color:var(--muted)">Entrada no encontrada.</div>'; return; }
+        root.innerHTML = '<h1>' + escapeHtml(post.title||'Sin título') + '</h1>' + '<div class="meta">' + escapeHtml(formatDate(post.date||new Date())) + '</div>' + '<div class="content">' + escapeHtml(post.content||'') + '</div>';
+        if(post.attachment && post.attachment.data){
+          const isImage = post.attachment.type && post.attachment.type.startsWith('image/');
+          if(isImage){
+            const img = document.createElement('img'); img.src = post.attachment.data; img.alt = post.attachment.name||'adjunto'; root.appendChild(img);
+          } else {
+            const a = document.createElement('a'); a.href = post.attachment.data; a.download = post.attachment.name||''; a.className='btn'; a.textContent = 'Descargar adjunto'; root.appendChild(a);
+          }
+        }
+      }catch(e){
+        document.getElementById('root').textContent = 'Error cargando la entrada.';
+        console.error(e);
+      }
+    })();
+  </script>
+</body>
+</html>
